@@ -65,3 +65,9 @@ Check out the live deployed version of MemeHustle here:
 - 🏆 Dynamic leaderboard based on popularity & bids
 - 🧪 Dev-friendly architecture using modern tech stack
 
+---
+
+## 🧠 AI Integration
+
+I have used Ollama for this project. 
+Reason: AI API keys were costly. So, I deployed ollama on a local server, created the endpoints and used it in my project. In order to integrate AI features.
