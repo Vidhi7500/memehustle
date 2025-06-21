@@ -18,6 +18,22 @@ Users can:
 
 ---
 
+## 📸 Screenshots
+
+### ✨ Meme Upload Form
+![Meme Upload Form](screenshots/Memeform.png)
+
+### 🔥 Real-Time Bidding Interface
+![Real-Time Bidding](screenshots/Biddingarena.png)
+
+### 🏆 Leaderboard View
+![Leaderboard](screenshots/Leaderboard.png)
+
+### ✨ Meme Display Card
+![Display Card](screenshots/MemeCard.png)
+
+---
+
 ## 🛠 Tech Stack
 
 | Layer         | Technology                          |
@@ -29,5 +45,4 @@ Users can:
 | Hosting       | Vercel / Render                      |
 | Version Ctrl  | Git + GitHub                         |
 
----
 
