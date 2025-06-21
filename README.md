@@ -45,4 +45,14 @@ Users can:
 | Hosting       | Vercel / Render                      |
 | Version Ctrl  | Git + GitHub                         |
 
+---
+
+## ✅ Features
+
+- ⚡ Instant meme uploads with smart AI-generated captions
+- 🧠 Vibe classification using Ollama or Gemini AI
+- 🟢 Real-time bidding wars powered by WebSockets
+- 👍 Voting system to promote top-tier memes
+- 🏆 Dynamic leaderboard based on popularity & bids
+- 🧪 Dev-friendly architecture using modern tech stack
 
