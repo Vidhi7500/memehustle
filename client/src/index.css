@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure full height and reset margin for proper layout */
 html,
 body,
 #root {

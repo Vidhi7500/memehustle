@@ -10,7 +10,7 @@ export default function Home() {
 
   const refreshMemes = async () => {
     const data = await fetchMemes();
-    setMemes(data.reverse()); // newest first
+    setMemes(data.reverse()); 
   };
 
   useEffect(() => {

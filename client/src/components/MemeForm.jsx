@@ -10,7 +10,7 @@ export default function MemeForm({ onCreated }) {
   const [title, setTitle] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [tags, setTags] = useState('');
-  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [status, setStatus] = useState(null); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();

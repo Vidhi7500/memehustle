@@ -1,4 +1,3 @@
-// src/App.jsx
 import HomePage from './pages/Home';
 
 function App() {

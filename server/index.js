@@ -25,4 +25,4 @@ app.use('/api/memes', memeRoutes);
 initSocket(io);
 
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`🔥 Server at http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`Server at http://localhost:${PORT}`));

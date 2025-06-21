@@ -5,7 +5,7 @@ const { getOllamaCaptionAndVibe } = require('../services/captionservice');
 
 router.post('/', async (req, res) => {
   const { title, image_url, tags } = req.body;
-  const user_id = 'cyberpunk420'; // mock user
+  const user_id = 'cyberpunk420'; 
 
   const { caption, vibe } = await getOllamaCaptionAndVibe(tags);
 
@@ -15,27 +15,27 @@ router.post('/', async (req, res) => {
     .select().single();
 
   if (error) {
-    console.error('❌ Supabase insert error:', error);
+    console.error(' Supabase insert error:', error);
   } else {
-    console.log('📤 POST Meme Insert Result:', data);
+    console.log(' POST Meme Insert Result:', data);
   }
 
   res.json(data || { error });
 });
 
 router.get('/', async (req, res) => {
-  console.log('📥 GET /memes requested');
+  console.log('GET /memes requested');
   try {
     const { data, error } = await supabase.from('memes').select('*');
 
     if (error) {
-      console.error('❌ Supabase SELECT error:', error.message);
+      console.error('Supabase SELECT error:', error.message);
       return res.status(500).json({ error: error.message });
     }
 
-    res.status(200).json(data); // Explicit 200 OK
+    res.status(200).json(data); 
   } catch (err) {
-    console.error('❌ Server error:', err.message);
+    console.error('Server error:', err.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -56,7 +56,6 @@ router.post('/:id/bid', async (req, res) => {
   const { credits } = req.body;
   const user_id = 'cyberpunk420';
 
-  // Get current highest bid
   const { data: meme, error: fetchError } = await supabase
     .from('memes')
     .select('highest_bid')
@@ -89,13 +88,13 @@ router.post('/:id/bid', async (req, res) => {
 
 let cachedLeaderboard = null;
 let lastFetched = 0;
-const CACHE_TTL = 10 * 1000; // 10 seconds
+const CACHE_TTL = 10 * 1000; 
 
 router.get('/leaderboard', async (req, res) => {
   const now = Date.now();
 
   if (cachedLeaderboard && (now - lastFetched < CACHE_TTL)) {
-    console.log('⚡ Serving leaderboard from cache');
+    console.log('Serving leaderboard from cache');
     return res.status(200).json(cachedLeaderboard);
   }
 
@@ -106,7 +105,7 @@ router.get('/leaderboard', async (req, res) => {
     .limit(50);
 
   if (error) {
-    console.error('❌ Supabase error:', error.message);
+    console.error(' Supabase error:', error.message);
     return res.status(500).json({ error: error.message });
   }
 
@@ -121,11 +120,11 @@ router.get('/leaderboard', async (req, res) => {
   cachedLeaderboard = scoredData;
   lastFetched = now;
 
-  console.log('🌐 Leaderboard refreshed from Supabase');
+  console.log(' Leaderboard refreshed from Supabase');
   res.status(200).json(scoredData);
 });
 
-// 🧠 Manual caption & vibe regeneration via Ollama
+//  Manual caption & vibe regeneration via Ollama
 router.post('/:id/caption', async (req, res) => {
   try {
     const { data: meme, error: fetchError } = await supabase
@@ -147,13 +146,13 @@ router.post('/:id/caption', async (req, res) => {
       .eq('id', req.params.id);
 
     if (updateError) {
-      console.error('❌ Failed to update caption/vibe:', updateError);
+      console.error('Failed to update caption/vibe:', updateError);
       return res.status(500).json({ error: 'Failed to update meme' });
     }
 
     res.status(200).json({ caption, vibe });
   } catch (err) {
-    console.error('❌ Caption generation error:', err.message);
+    console.error('Caption generation error:', err.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

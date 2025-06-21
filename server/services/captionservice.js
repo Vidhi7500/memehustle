@@ -1,4 +1,3 @@
-// src/services/captionservice.js
 const axios = require('axios');
 
 const fallbackCaptions = [
@@ -41,7 +40,7 @@ Vibe Description: A short 2-3 word phrase that describes the meme's overall vibe
 
     return { caption, vibe };
   } catch (err) {
-    console.error('❌ Ollama API error:', err.message);
+    console.error('Ollama API error:', err.message);
     return {
       caption: getRandom(fallbackCaptions),
       vibe: getRandom(fallbackVibes)

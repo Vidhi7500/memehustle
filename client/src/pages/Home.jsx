@@ -11,11 +11,11 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
-  const [view, setView] = useState('upload'); // 'upload', 'leaderboard', 'bidding'
+  const [view, setView] = useState('upload'); 
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
-      {/* 🔷 Navbar */}
+      {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-cyan-600 text-white px-8 py-4 shadow-md flex items-center justify-between">
         <h1 className="text-2xl font-bold tracking-wide flex items-center gap-2">
           <Brain className="w-6 h-6" /> MemeHustle
@@ -45,10 +45,9 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Spacer below navbar */}
+
       <div className="h-20" />
 
-      {/* 🎯 Conditional Rendering */}
       <main className="px-6 py-10 max-w-5xl mx-auto">
         {view === 'upload' && (
           <>
