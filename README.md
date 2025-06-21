@@ -18,6 +18,15 @@ Users can:
 
 ---
 
+## 🚀 Live Demo
+
+Check out the live deployed version of MemeHustle here:
+
+👉 [https://memehustle-client.vercel.app/](https://memehustle-client.vercel.app/)
+
+
+---
+
 ## 📸 Screenshots
 
 ### ✨ Meme Upload Form
